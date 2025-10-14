@@ -21,8 +21,11 @@ Languages: HTML, CSS, JavaScript, React
 Word: _ _ _ _ _
 
 ❌ Wrong guess: “E” → HTML eliminated
+
 ❌ Wrong guess: “A” → CSS eliminated
+
 ✅ Correct guess: “O”
+
 ...
 
 Can you save the stack before everything compiles down to Assembly?
