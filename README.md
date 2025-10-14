@@ -4,7 +4,7 @@ A creative twist on the classic **Hangman** — but with a developer’s flavor!
 Guess the hidden word, and with each wrong guess, a **programming language** gets eliminated.  
 Keep your logic sharp, because once all languages are gone… only **Assembly** remains.
 
----
+--- 
 
 ## 🕹️ How It Works
 
@@ -36,14 +36,12 @@ Can you save the stack before everything compiles down to Assembly?
 - Dynamic elimination of coding languages  
 - Customizable word lists and language sets  
 - Minimal, clean interface
----
 
 ## 🚀 Tech Stack
 
 - **React** and **Typescript**
 
-
-🎯 Future Enhancements
+## 🎯 Future Enhancements
 
 Add sound effects and animations
 
@@ -53,7 +51,7 @@ Add leaderboard and difficulty levels
 
 Support multiplayer mode
 
-💬 Contributing
+## 💬 Contributing
 
 Contributions are welcome!
 If you’d like to improve gameplay, UI, or add new features:
@@ -66,7 +64,7 @@ If you’d like to improve gameplay, UI, or add new features:
 
 * Push and open a pull request
 
-🧠 Inspiration
+## 🧠 Inspiration
 
 This project reimagines the timeless Hangman game with a programming twist — celebrating coding culture while testing your logic and word-guessing skills.
 
