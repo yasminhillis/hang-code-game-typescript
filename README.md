@@ -26,11 +26,9 @@ Word: _ _ _ _ _
 
 ✅ Correct guess: “O”
 
-...
 
 Can you save the stack before everything compiles down to Assembly?
 
----
 
 ## 🧩 Features
 
@@ -43,9 +41,10 @@ Can you save the stack before everything compiles down to Assembly?
 ## 🚀 Tech Stack
 
 - **React** and **Typescript**
----
+
 
 🎯 Future Enhancements
+
 Add sound effects and animations
 
 Display programming trivia for each eliminated language
@@ -55,19 +54,21 @@ Add leaderboard and difficulty levels
 Support multiplayer mode
 
 💬 Contributing
+
 Contributions are welcome!
 If you’d like to improve gameplay, UI, or add new features:
 
-Fork the repo
+* Fork the repo
 
-Create a new branch (git checkout -b feature-idea)
+* Create a new branch (git checkout -b feature-idea)
 
-Commit your changes (git commit -m 'Add new feature')
+* Commit your changes (git commit -m 'Add new feature')
 
-Push and open a pull request
+* Push and open a pull request
 
 🧠 Inspiration
+
 This project reimagines the timeless Hangman game with a programming twist — celebrating coding culture while testing your logic and word-guessing skills.
 
 
-👩‍💻 Created by [Yasmin Hillis](https://github.com/yasminhillis)
+👩‍💻 **Created by** [Yasmin Hillis](https://github.com/yasminhillis)
