@@ -17,10 +17,11 @@ Keep your logic sharp, because once all languages are gone… only **Assembly** 
 ## 💡 Example
 
 Languages: HTML, CSS, JavaScript, React
+
 Word: _ _ _ _ _
 
-❌ Wrong guess: “E” → Python eliminated
-❌ Wrong guess: “A” → JavaScript eliminated
+❌ Wrong guess: “E” → HTML eliminated
+❌ Wrong guess: “A” → CSS eliminated
 ✅ Correct guess: “O”
 ...
 
