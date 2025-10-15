@@ -1,35 +1,88 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
+import { languages } from "./languages"
+import { getRandomWord } from "./utils"
 
-function App() {
-  const [count, setCount] = useState(0)
+import ConfettiContainer from "./components/ConfettiContainer"
+import Header from './components/Header'
+import GameStatus from "./components/GameStatus"
+import WordLetters from "./components/WordLetters"
+import AriaLiveStatus from "./components/AriaLiveStatus"
+import Keyboard from "./components/Keyboard"
+import NewGameButton from "./components/NewGameButton"
+import LanguageChips from "./components/LanguageChips"
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export default function AssemblyEndgame() {
+    // State values
+    const [currentWord, setCurrentWord] = useState<string>((): string => getRandomWord())
+    const [guessedLetters, setGuessedLetters] = useState<string[]>([])
+
+    // Derived values
+    const numGuessesLeft = languages.length - 1
+    const wrongGuessCount =
+        guessedLetters.filter(letter => !currentWord.includes(letter)).length
+    const isGameWon =
+        currentWord.split("").every(letter => guessedLetters.includes(letter))
+    const isGameLost = wrongGuessCount >= numGuessesLeft
+    const isGameOver = isGameWon || isGameLost
+    const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
+    const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
+
+    // Static values
+    const alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+    function addGuessedLetter(letter: string): void {
+        setGuessedLetters((prevLetters: string[]): string[] =>
+            prevLetters.includes(letter) ?
+                prevLetters :
+                [...prevLetters, letter]
+        )
+    }
+  
+    function startNewGame() {
+        setCurrentWord(getRandomWord())
+        setGuessedLetters([])
+    }
+
+    return (
+
+      <main>
+        <ConfettiContainer isGameWon={isGameWon}/>
+        <Header />
+        <GameStatus 
+          isGameWon={isGameWon}
+          isGameLost={isGameLost}
+          isGameOver={isGameOver}
+          isLastGuessIncorrect={isLastGuessIncorrect}
+          wrongGuessCount={wrongGuessCount}
+        />
+
+        <LanguageChips languages={languages} wrongGuessCount={wrongGuessCount} />  
+
+        <WordLetters
+            currentWord={currentWord}
+            isGameLost={isGameLost}
+            guessedLetters={guessedLetters}
+        />
+          
+        <AriaLiveStatus
+            currentWord={currentWord} 
+            lastGuessedLetter={lastGuessedLetter} 
+            numGuessesLeft={numGuessesLeft}
+            guessedLetters={guessedLetters}
+        /> 
+
+        <Keyboard 
+            alphabet={alphabet} 
+            guessedLetters={guessedLetters} 
+            currentWord={currentWord}
+            isGameOver={isGameOver} 
+            addGuessedLetter={addGuessedLetter}
+        />           
+
+        <NewGameButton 
+            startNewGame={startNewGame}
+            isGameOver={isGameOver}
+        />
+      </main>
+    )
 }
-
-export default App
