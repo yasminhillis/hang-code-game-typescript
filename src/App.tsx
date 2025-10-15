@@ -25,7 +25,7 @@ export default function AssemblyEndgame() {
     const isGameLost = wrongGuessCount >= numGuessesLeft
     const isGameOver = isGameWon || isGameLost
     const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
-    const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
+    const isLastGuessIncorrect: boolean = Boolean(lastGuessedLetter && !currentWord.includes(lastGuessedLetter))
 
     // Static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
